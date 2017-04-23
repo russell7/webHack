@@ -60,8 +60,8 @@ function cnda_battle_field_enhance() {
 
 		function mutationHandler (mutationRecords) {
 	        var cnda_division = "D" + $j("div.player_holder").attr("data-division");
-	        var cnda_hit_count = $j("#personal_stats").find("q:nth-child(2)").text();
-	        var cnda_hit_damage = $j("#personal_stats").find("q:last").text();
+	        var cnda_hit_count = $j("#personal_stats").find("q:nth-child(2)").text().replace(',','');
+	        var cnda_hit_damage = $j("#personal_stats").find("q:last").text().replace(',','');
 
 	        localStorage.setItem('cnda_division', cnda_division);
 	        localStorage.setItem('cnda_hit_count', cnda_hit_count);
