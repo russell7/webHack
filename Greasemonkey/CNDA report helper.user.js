@@ -4,7 +4,7 @@
 // @description automatic fill report for CNDA
 // @include     *www.erepublik.com/*/article/*cnda*
 // @include     *www.erepublik.com/*/military/*
-// @version     1.0.2
+// @version     1.0.3
 // @grant       none
 // ==/UserScript==
 
@@ -61,8 +61,8 @@ function cnda_battle_field_enhance() {
         } );
         function cnda_refresh_bfd() {
             var cnda_division = "D" + $j("div.player_holder").attr("data-division").slice(-1);
-            var cnda_hit_count = $j("#personal_stats").find("q:nth-child(2)").text().replace(',','');
-            var cnda_hit_damage = $j("#personal_stats").find("q:last").text().replace(',','');
+            var cnda_hit_count = $j("#personal_stats").find("q:nth-child(2)").text().replace(/,/g,'');
+            var cnda_hit_damage = $j("#personal_stats").find("q:last").text().replace(/,/g,'');
 
             localStorage.setItem('cnda_division', cnda_division);
             localStorage.setItem('cnda_hit_count', cnda_hit_count);
