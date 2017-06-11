@@ -30,13 +30,13 @@ function main() {
     };
 
     window.decorateVal = function (oriVal){
-        return oriVal + getRandomArbitrary(11, 999);
+        return oriVal + getRandomArbitrary(100, 999);
     };
 
     window.fillDemo = function () {
         $("input").each(function () {
             var _this = $(this);
-            if (!_this.is(":visible")) {
+            if (!_this.is(":visible") || _this.val()) {
                 return;
             }
 
