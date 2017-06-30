@@ -5,7 +5,7 @@
 // @description  try to fill the form with values
 // @author       Russell
 // @include     /^https?://192.168.1.\d{1,3}.*$/
-// @match        http://localhost:3380/*
+// @include     /^https?://localhost.*$/
 // @grant        none
 // ==/UserScript==
 
