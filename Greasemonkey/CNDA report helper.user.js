@@ -32,7 +32,7 @@ function main() {
         var cnda_hit_count = $j("#cnda_hit_count").val();
         var cnda_hit_damage = $j("#cnda_hit_damage").val();
         var cnda_report = String.format("{0}*{1}*{2}*{3}*{4}*0", code, name, cnda_division, cnda_hit_count, cnda_hit_damage);
-        $j("#article_comment").val(cnda_report);
+        $j("#addCommentWrapper>textarea").val(cnda_report);
     }
 
     window.loadBattleFieldData = function () {
