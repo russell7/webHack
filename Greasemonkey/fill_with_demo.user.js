@@ -56,7 +56,7 @@ function main() {
                     _this.val("test@zzxes.com.cn");
                 }
             }
-            if (_this.attr("name") && _this.attr("name").match(/mobilePhone/i)) {
+            if (_this.attr("name") && _this.attr("name").match(/.*mobile.*/i)) {
                 _this.val(getRandomArbitrary(13300000000, 18999999999));
             }
             if (_this.attr("name") && _this.attr("name").match(/.*[Dd]ate.*/i)) {
