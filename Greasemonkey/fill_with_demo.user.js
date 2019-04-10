@@ -34,6 +34,11 @@ function main() {
         return oriVal + getRandomArbitrary(11, 999);
     };
 
+    window.mvvmJSSetValue = function(elm, value) {
+        elm.value = value;
+        elm.defaultValue = value;
+        elm.dispatchEvent(new Event("input", {bubbles: true, target: elm, data: value}));
+    }
     window.fillDemo = function () {
         $("input").each(function () {
             var _this = $(this);
@@ -43,7 +48,7 @@ function main() {
 
             var _type = $(this).attr("type");
             if ("text" == _type) {
-                _this.val(decorateVal($("label[for=" + $(this).attr("id") + "]").text().replace(" ", "") + "demo"));
+                mvvmJSSetValue(this, decorateVal($("label[for=" + $(this).attr("id") + "]").text().replace(" ", "") + "demo"));
             } else if ("number" == _type) {
                 _this.val(getRandomArbitrary(123456, 999999));
                 if (_this.attr("maxlength")) {
