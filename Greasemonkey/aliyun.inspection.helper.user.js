@@ -26,6 +26,11 @@ function extractText(){
         text = text.replace(new RegExp(/\(.*?\)/, 'g'), "");
         text = text.replace(new RegExp(/elc-/, 'g'), "");
         text = text.replace(new RegExp(/-live/, 'g'), "");
+        text = text.replace(new RegExp(/polar-/, 'g'), "");
+        // remove disk mount point
+        text = text.replace(new RegExp(/-\/dev\/vda1/, 'g'), "");
+        // remove polar instance prefix, keep tail
+        text = text.replace(new RegExp(/pi-\w{13}/, 'g'), "");
         nums+=text+"\n";
     });
     if (nums.length > 0) {
@@ -38,7 +43,13 @@ function extractText(){
     'use strict';
 
     $(document).bind('keydown', function(e) {
-        if('x' === e.key && e.altKey){
+        // some aliyun bug pollute alt
+        if('x' == e.key && e.altKey){
+            console.log("alt on");
+            extractText();
+        }
+        if('x' == e.key && e.ctrlKey){
+            console.log("ctrl on");
             extractText();
         }
     });
