@@ -18,8 +18,12 @@
     });
 
     function addNavBtn() {
-        const navBtn = $('<a style="right:30rem;position: absolute;top: 1rem;z-index: 1;" href="/cgi-bin/luci/#admin/networknew/natSetting">NAT</a>');
+        const navBtn = $('<button style="right:30rem;position: absolute;top: 1rem;z-index: 1;" href="/cgi-bin/luci/#admin/networknew/natSetting">NAT</button>');
         $('.tabmenu.l1 .tabmenu-item-language.level1Li').after(navBtn);
+        navBtn.click(function() {
+            $('.tabmenu-item-natSetting a:first').click();
+            setTimeout(addToggleButtons, 2000);
+        });
     }
 
     function addToggleButtons() {
