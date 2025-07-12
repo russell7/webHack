@@ -32,7 +32,8 @@
         $('.table.table-striped.table-bordered tr').each(function() {
             const row = $(this);
             const stateCell = row.find('td').eq(7);
-            const currentOn = stateCell.text().trim() === 'On';
+            let stateStr = stateCell.text().trim();
+            const currentOn = stateStr === 'On' || stateStr === '启用';
 
             const toggleBtn = $('<button class="toggle-btn" style="padding: 0;margin-left: 1rem;margin-right: 0;">Toggle</button>');
             toggleBtn.css('background-color', currentOn ? 'green' : 'red');
